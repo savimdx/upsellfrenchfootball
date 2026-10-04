@@ -9,7 +9,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-const MOCKUP_PACK_IMG = "https://i.ibb.co/cc8kxXMZ/Chat-GPT-Image-27-de-set-de-2026-14-53-382.png";
+const MOCKUP_PACK_IMG = "https://i.ibb.co/nNP2xQp8/Mockup-Pack-Treinador-de-Elite-do-PSG-comppp.png";
 
 interface UpsellRFEFProps {
   onAccept: () => void;
@@ -158,7 +158,7 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
               <img 
                 src={MOCKUP_PACK_IMG} 
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "/elite-coach-pack.png";
+                  (e.currentTarget as HTMLImageElement).src = "/mockup-psg-elite.png";
                 }}
                 alt="Pack Entraîneur D'Élite - Ressources et exercices d'entraînement de football" 
                 className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-[1.02] block"
@@ -185,7 +185,7 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
                 <p className="text-xs sm:text-sm text-slate-700">
-                  <span className="font-bold text-slate-900">Exercices techniques</span> : Des exercices pratiques pour développer les compétences individuelles, la maîtrise du ballon, les passes, les contrôles et les gestes techniques.
+                  <span className="font-bold text-slate-900">Exercices pour les équipes d'élite de la Ligue 1</span> : Des exercices pratiques pour développer les compétences individuelles, la maîtrise du ballon, les passes, les contrôles et les gestes techniques.
                 </p>
               </div>
 
@@ -243,6 +243,9 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
                     17 €
                   </span>
                 </div>
+                <span className="text-[11px] sm:text-xs text-slate-600 font-medium text-center">
+                  (Vous pouvez effectuer le paiement dans votre devise locale)
+                </span>
                 <span className="text-[10px] text-slate-500 uppercase font-mono tracking-wider text-center font-bold">
                   Paiement unique • Accès immédiat
                 </span>
