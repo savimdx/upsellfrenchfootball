@@ -155,21 +155,29 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
           {/* ================= 8. MOCKUP PRINCIPAL DU PRODUIT ================= */}
           <div className="w-full flex flex-col items-center justify-center">
             <div className="relative group w-full max-w-[560px] flex items-center justify-center">
-              <img 
-                src={MOCKUP_PACK_IMG} 
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "/mockup-psg-elite.png";
-                }}
-                alt="Pack Entraîneur D'Élite - Ressources et exercices d'entraînement de football" 
-                className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-[1.02] block"
-                loading="eager"
-                // @ts-ignore
-                fetchPriority="high"
-                decoding="async"
-                referrerPolicy="no-referrer"
-                width={640}
-                height={640}
-              />
+              <picture className="w-full flex items-center justify-center">
+                <source srcSet="/mockup-psg-elite.avif" type="image/avif" />
+                <source srcSet="/mockup-psg-elite.webp" type="image/webp" />
+                <img 
+                  src="/mockup-psg-elite.webp" 
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (target.src.endsWith('.webp')) {
+                      target.src = "/mockup-psg-elite.png";
+                    } else {
+                      target.src = MOCKUP_PACK_IMG;
+                    }
+                  }}
+                  alt="Pack Entraîneur D'Élite - Ressources et exercices d'entraînement de football" 
+                  className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-[1.02] block"
+                  loading="eager"
+                  // @ts-ignore
+                  fetchPriority="high"
+                  decoding="async"
+                  width={640}
+                  height={640}
+                />
+              </picture>
             </div>
           </div>
 
@@ -271,7 +279,7 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
           {/* HOTMART - Sales Funnel Widget */}
           {/*- sales funnel container ---*/}
           <div className="w-full flex justify-center items-center my-2">
-            <div id="hotmart-sales-funnel" className="w-full flex justify-center items-center min-h-[120px]"></div>
+            <div id="hotmart-sales-funnel" className="w-full"></div>
           </div>
           {/*- script load and setup ---*/}
           {/* HOTMART - Sales Funnel Widget */}
