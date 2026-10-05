@@ -14,6 +14,7 @@ import UpsellRFEF from './components/UpsellRFEF';
 import { CheckCircle2, Download, Sparkles } from 'lucide-react';
 
 export default function App() {
+  const [downloadStarted, setDownloadStarted] = useState(false);
   const [timeLeftSticky, setTimeLeftSticky] = useState(1800); // 30 mins matching the Offer timer
   const [viewMode, setViewMode] = useState<'upsell' | 'thankyou_accepted' | 'thankyou_declined'>('upsell');
 
@@ -133,11 +134,14 @@ export default function App() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 {viewMode === 'thankyou_accepted' && (
                   <button 
-                    onClick={() => alert("Téléchargement du Pack Entraîneur D'Élite initié avec succès.")}
+                    onClick={() => {
+                      setDownloadStarted(true);
+                      setTimeout(() => setDownloadStarted(false), 4000);
+                    }}
                     className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 hover:brightness-110 text-white font-black text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg animate-pulse"
                   >
                     <Download className="h-4 w-4" />
-                    <span>Télécharger le Pack Entraîneur D'Élite</span>
+                    <span>{downloadStarted ? "Téléchargement lancé..." : "Télécharger le Pack Entraîneur D'Élite"}</span>
                   </button>
                 )}
               </div>
