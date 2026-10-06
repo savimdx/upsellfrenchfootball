@@ -9,7 +9,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-const MOCKUP_PACK_IMG = "https://i.ibb.co/nNP2xQp8/Mockup-Pack-Treinador-de-Elite-do-PSG-comppp.png";
+const MOCKUP_PACK_IMG = "https://i.ibb.co/Lzjn8YRJ/Metodologia-de-Treinamento-do-PSG-compressed.png";
 
 interface UpsellRFEFProps {
   onAccept: () => void;
@@ -140,7 +140,7 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
         <div className="text-center space-y-3">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-none text-slate-900 uppercase">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-500 to-orange-600">
-              PROFITEZ DU PACK ENTRAÎNEUR D'ÉLITE
+              PROFITEZ DE LA MÉTHODOLOGIE D'ENTRAÎNEMENT DU PSG
             </span> <br />
             <span>ET PASSEZ VOS SÉANCES AU NIVEAU SUPÉRIEUR !</span>
           </h1>
@@ -156,19 +156,19 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
           <div className="w-full flex flex-col items-center justify-center">
             <div className="relative group w-full max-w-[560px] flex items-center justify-center">
               <picture className="w-full flex items-center justify-center">
-                <source srcSet="/mockup-psg-elite.avif" type="image/avif" />
-                <source srcSet="/mockup-psg-elite.webp" type="image/webp" />
+                <source srcSet="/metodologia-treinamento-psg.avif" type="image/avif" />
+                <source srcSet="/metodologia-treinamento-psg.webp" type="image/webp" />
                 <img 
-                  src="/mockup-psg-elite.webp" 
+                  src="/metodologia-treinamento-psg.webp" 
                   onError={(e) => {
                     const target = e.currentTarget as HTMLImageElement;
                     if (target.src.endsWith('.webp')) {
-                      target.src = "/mockup-psg-elite.png";
+                      target.src = "/metodologia-treinamento-psg.png";
                     } else {
                       target.src = MOCKUP_PACK_IMG;
                     }
                   }}
-                  alt="Pack Entraîneur D'Élite - Ressources et exercices d'entraînement de football" 
+                  alt="Méthodologie d'Entraînement du PSG - Ressources et exercices d'entraînement de football" 
                   className="w-full h-auto max-h-[520px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-[1.02] block"
                   loading="eager"
                   // @ts-ignore
@@ -193,7 +193,7 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
                 <p className="text-xs sm:text-sm text-slate-700">
-                  <span className="font-bold text-slate-900">Exercices pour les équipes d'élite de la Ligue 1</span> : Des exercices pratiques pour développer les compétences individuelles, la maîtrise du ballon, les passes, les contrôles et les gestes techniques.
+                  <span className="font-bold text-slate-900">Exercices utilisés par le Paris Saint-Germain</span> : Des exercices pratiques pour développer les compétences individuelles, la maîtrise du ballon, les passes, les contrôles et les gestes techniques.
                 </p>
               </div>
 
@@ -241,19 +241,16 @@ export default function UpsellRFEF({ onAccept, onDecline }: UpsellRFEFProps) {
                   OFFRE SPÉCIALE EXCLUSIVE
                 </span>
                 <span className="text-xs sm:text-sm text-slate-600 uppercase tracking-wider font-extrabold">
-                  PACK ENTRAÎNEUR D'ÉLITE
+                  MÉTHODOLOGIE D'ENTRAÎNEMENT DU PSG
                 </span>
                 <span className="text-xs text-orange-600 uppercase tracking-widest font-black mt-1">
                   ACCÈS PRIVILÈGE AUJOURD'HUI :
                 </span>
                 <div className="flex items-center justify-center text-[#FF5500] font-['Montserrat','Arial_Black',sans-serif] drop-shadow-[0_2px_8px_rgba(0,0,0,0.14)] py-1 whitespace-nowrap">
                   <span className="text-5xl sm:text-6xl md:text-7xl font-[900] tracking-tight leading-none">
-                    17 €
+                    9 €
                   </span>
                 </div>
-                <span className="text-[11px] sm:text-xs text-slate-600 font-medium text-center">
-                  (Vous pouvez effectuer le paiement dans votre devise locale)
-                </span>
                 <span className="text-[10px] text-slate-500 uppercase font-mono tracking-wider text-center font-bold">
                   Paiement unique • Accès immédiat
                 </span>
